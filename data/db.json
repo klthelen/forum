@@ -1,0 +1,20 @@
+{
+  "info": [
+    {
+      "message": "Goodbye",
+      "user": "Kirk",
+      "id": 3
+    },
+
+    {
+      "message": "Hello",
+      "user": "Ben",
+      "id": 1
+    },
+    {
+      "message": "another message",
+      "user": "Anonymous",
+      "id": 2
+    }
+  ]
+}
