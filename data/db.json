@@ -1,12 +1,6 @@
 {
   "info": [
     {
-      "message": "Goodbye",
-      "user": "Kirk",
-      "id": 3
-    },
-
-    {
       "message": "Hello",
       "user": "Ben",
       "id": 1
@@ -15,6 +9,21 @@
       "message": "another message",
       "user": "Anonymous",
       "id": 2
+    },
+    {
+      "message": "Goodbye",
+      "user": "Kirk",
+      "id": 3
+    },
+    {
+      "message": "some more messages",
+      "user": "Anonymous",
+      "id": 4
+    },
+    {
+      "message": "Hello again",
+      "user": "Anonymous",
+      "id": 5
     }
   ]
 }
