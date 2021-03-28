@@ -1,24 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import HeaderHover from "./HeaderHover"
+import ImageHover from "./ImageHover"
+import DynamicLink from "./DynamicLink"
 
 const Navbar = props => {
     return (
         <div>
             <div id="headerImageContainer">
                 <a href="http://mtu.edu/">
-                    <HeaderHover />
+                    <ImageHover 
+                        height={60}
+                        default={"/assets/logoGold.png"} 
+                        hover={"/assets/logoWhite.png"}
+                        className={"headerImage"}
+                        altText={"Michigan Technological University"}
+                    />
                 </a>
             </div>
             <div id="top-banner">
-            <div className="link">
-                <a href="/">Home</a>
-                <a href="/About">About</a>
-                <a href="/FAQ">FAQ</a>
-                <a href="/Rules">Rules</a>
+                <DynamicLink />
             </div>
         </div>
-    </div>
     )
 };
 

@@ -30,28 +30,91 @@ body {
 
 .headerImage {
   padding:10px;
-  width: 200px;
   float: left;
   z-index: 999;
+}
+
+.gridNavO {
+  padding: 5px 5px 0px 5px; 
+  float:right;
+  background-color: #ffcd00;
+}
+
+.gridNavC {
+  padding: 5px;
+  float:right;
+  background-color: transparent;
+}
+
+.gridCont {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position:absolute;
+  top: 65%;
+  right: 0;
+  width: 90px;
+  z-index: 999;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+  text-align:center;
+  border-style: line;
+  border-width: 2px;
+  border-color: #ffcd00;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color:black;
+}
+
+li {
+  padding: 10px;
+  color:#ffcd00;
+  font-weight: bold;
+}
+
+li:hover {
+  color:black;
+  background-color:#ffcd00;
+  cursor: pointer;
+  transition: .2s;
+}
+
+li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gridBtn {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
 }
 
 .link {
   position: relative;
   padding: 10px;
+  margin-right:5px;
   text-align: right;
-  font-family: open sans,Helvetica,segoe ui,Arial,sans-serif;
+  font-family: "Open Sans",Helvetica,segoe ui,Arial,sans-serif;
   font-size: 23px;
-  color:#ffcd00;
+
 }
 
 .link a {
   position: inherit;
   padding: inherit;
   text-align: inherit;
-  font-family: open sans,Helvetica,segoe ui,Arial,sans-serif;
+  font-family: "Open Sans",Helvetica,segoe ui,Arial,sans-serif;
   font-size: inherit;
-  color: inherit;
   text-decoration: none;
+  color: #ffcd00;
 }
 
 .link a:hover {
@@ -61,7 +124,6 @@ body {
   text-align: inherit;
   font-family: inherit;
   font-size: inherit;
-  color: inherit;
   text-decoration: inherit;
   transition: .2s;
   border-bottom: solid;
@@ -69,7 +131,6 @@ body {
   border-bottom-style: line;
   color: white;
   border-bottom-color: white;
-  background:black;
 }
 
 #page-container {
