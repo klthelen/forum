@@ -11,9 +11,11 @@ const Links = props => {
     return (
         <div className="link">
             <a href="/">Home</a>
+            <a href="/Threads">Threads</a>
             <a href="/About">About</a>
             <a href="/FAQ">FAQ</a>
             <a href="/Rules">Rules</a>
+            <a href="/Login">Login</a>
         </div>
     )
 }
@@ -71,9 +73,11 @@ class Grid extends React.Component {
                         <div className="dropdown">
                             <ul>
                             <li> <a href="/">Home</a> </li>
+                            <li> <a href="/Threads">Threads</a> </li>
                             <li> <a href="/About">About</a> </li>
                             <li> <a href="/FAQ">FAQ</a> </li>
                             <li> <a href="/Rules">Rules</a> </li>
+                            <li> <a href="/Login">Login</a> </li>
                             </ul>
                         </div>
                     )}
@@ -98,7 +102,7 @@ function DynamicLink () {
     const [width, setWidth] = React.useState(window.innerWidth);
     
     // Chooses whether to show written links or grid links based on window width
-    if(width > 600) {
+    if(width > 700) {
         return (<Links />)
     }
     else { 

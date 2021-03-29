@@ -1,11 +1,13 @@
 import './App.css';
-import Home from './pages/Home';
-
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import About from './pages/About';
-import Rules from './pages/Rules';
-import FAQ from './pages/FAQ';
 import DoesNotExist from './pages/DoesNotExist';
+import FAQ from './pages/FAQ';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Rules from './pages/Rules';
+import SignUp from './pages/SignUp';
+import Threads from './pages/Threads';
 
 function App() {
   return (
@@ -14,6 +16,9 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/Threads">
+              <Threads />
             </Route>
             <Route exact path="/About">
               <About />
@@ -24,6 +29,12 @@ function App() {
             <Route exact path="/Rules">
               <Rules />
             </Route >
+            <Route exact path="/Login">
+              <Login />
+            </Route>
+            <Route exact path="/SignUp">
+              <SignUp />
+            </Route>
             <Route path="*">
               <DoesNotExist />
             </Route>
