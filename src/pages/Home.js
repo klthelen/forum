@@ -19,7 +19,7 @@ const Home = () => {
         <div className="Home">
             <div id="page-container">
                 <div id="content-wrap">
-                    <Navbar />
+                    <Navbar pageID={0} />
                     <SendMessage />
                     {info && <DisplayMessage info={info}/>}
                 </div>

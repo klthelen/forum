@@ -5,7 +5,7 @@ const About = () => {
         <div className="About">
              <div id="page-container">
                 <div id="content-wrap">
-                    <Navbar />
+                    <Navbar pageID={2}/>
                     <h2>This is the About page</h2>
                 </div>
                 <Footer />

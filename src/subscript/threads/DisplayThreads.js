@@ -4,8 +4,7 @@ const DisplayThreads = ({info}) => {
             <h2>My threads:</h2>
             {info.map(N => (
                <div id="previewThread" key={N.id}>
-                        <div className="nameContent"> "{N.name}"</div>
-                        <div className="idContent"> (ID: {N.id})</div>
+                        <li><a href = {"/Threads/" + N.id}>{N.id + ". " + N.name}</a></li>
                </div>
            ))}
         </div>

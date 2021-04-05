@@ -1,7 +1,4 @@
-// Needs to be fixed
-
 import {useState, useEffect} from 'react'
-// import {SendMessage, DisplayMessage} from '../subscript/messages' // Not in use
 import CreateThreads from '../subscript/threads/CreateThreads'
 import DisplayThreads from '../subscript/threads/DisplayThreads'
 import {Navbar, Footer} from '../subscript/universal'
@@ -23,7 +20,7 @@ const Threads = () => {
         <div className="Threads">
             <div id="page-container">
                 <div id="content-wrap">
-                    <Navbar />
+                    <Navbar pageID={1}/>
                     <CreateThreads />
                     {info && <DisplayThreads info={info}/>}
                 </div>

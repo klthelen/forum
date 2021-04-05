@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Rules from './pages/Rules';
 import SignUp from './pages/SignUp';
 import Threads from './pages/Threads';
+<script src="https://kit.fontawesome.com/a0bb7363c7.js" crossorigin="anonymous"></script>
 
 function App() {
   return (

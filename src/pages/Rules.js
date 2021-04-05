@@ -5,7 +5,7 @@ const Rules = () => {
         <div className="Rules">
              <div id="page-container">
                 <div id="content-wrap">
-                    <Navbar />
+                    <Navbar pageID={4}/>
                     <h2>This is the Rules page</h2>
                 </div>
                 <Footer />

@@ -5,7 +5,7 @@ const FAQ = () => {
         <div className="FAQ">
              <div id="page-container">
                 <div id="content-wrap">
-                    <Navbar />
+                    <Navbar pageID={3}/>
                     <h2>This is the FAQ page</h2>
                 </div>
                 <Footer />

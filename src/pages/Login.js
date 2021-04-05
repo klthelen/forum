@@ -1,41 +1,72 @@
 // import {useState, useEffect} from 'react' // Not currently used?
+import React from "react"
 import {Navbar, Footer} from '../subscript/universal'
 
-const Login = () => {
+const Login = props => {
+    const updateWidth = () => {
+        setWidth(window.innerWidth);
+    };
+
+    // Checks if user has resized window and updates width as necessary
+    React.useEffect(() => {
+        window.addEventListener("resize", updateWidth);
+        return () => window.removeEventListener("resize", updateWidth);
+    });
+
+    const [width, setWidth] = React.useState(window.innerWidth);
+
+    // Changes based on window width
+    let loginClass = "login-container-main";
+    if (width < 500) {
+        loginClass = "login-container-mini";
+    }
+
     return (  
-        <div className="Login">
+        <div>
              <div id="page-container">
                 <div id="content-wrap">
-                    <Navbar />
-                    <h1>Login</h1>
-                    <h2>Email</h2>
-                    <form > 
-                        <input
-                        type = "email"
-                        required
-                        //value {email}
-                        //onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <h2>Password</h2>
-                        <input
-                        type = "password"
-                        required
-                        //value {password}
-                        //onChange={(e) => setPassword(e.target.value)}
-                        />
-                        {/* <h2></h2> */ }
-                        <button>Login</button>
-                    </form>
-                    {/*
-                    <h2></h2>
-                    <h2></h2>
-                    */}
-                    <a href="/SignUp">Create An Account</a>
+                    <Navbar pageID={10}/>
+                    <div id={loginClass}>
+                        <div className="login-header-container">
+                            <div className="login-header"> Log In </div>
+                            <div className="signup-link"> No account? <a href="/signup">Sign up instead.</a></div>
+                        </div>
+                        
+                        {/* Inputs start */}
+                        <form className="login-form"> 
+                            
+                            <div className="input-field-container">
+                                <input
+                                className="input-field"
+                                type = "email"
+                                placeholder = "Email"
+                                required
+                                //value {email}
+                                //onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="login-divider" />
+
+                            <div className="input-field-container">
+                                <input
+                                className="input-field"
+                                type = "password"
+                                placeholder = "Password"
+                                required
+                                //value {password}
+                                //onChange={(e) => setPassword(e.target.value)}
+                                />
+                            </div>
+
+                            <button className="login-button">Log in</button>
+                        </form>
+                    </div>
                 </div>
                 <Footer />
             </div>
         </div>
     );
 }
- 
+
 export default Login;

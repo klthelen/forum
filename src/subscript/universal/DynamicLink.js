@@ -2,20 +2,50 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ImageHover from "./ImageHover";  // Grid hover
 
+
 const images = {
     white: "/assets/gridWnb.png",
     gold: "/assets/gridGnb.png",
 }
+
 // Written link navigation
 const Links = props => {
+
+    // Creates links that change if user is currently on their page
+    // Use this if you need to add links (see return for example usage)
+    function createLink(validID, ahref, title) {
+        // Make sure each page has: <Navbar pageID={uniquenumber} />
+        // Match the unique page number to "validID" when you call createLink in the return
+        if(props.pageID === validID) {
+            return(<span className="link-span--active"> <a href={ahref}>{title}</a></span>)
+        }
+        else {
+            return(<span className="link-span"> <a href={ahref}>{title}</a></span>)
+        }
+    }
+
+    // Creates unique login link that changes if user is currently on the login page
+    // Don't use with other links or they will look like the login link
+    function createLogIn() {
+        if(props.pageID === 10) {
+            return(<span className="link-span-login--active"><a href="/login">Log in</a></span>)
+        }
+        else {
+            return(<span className="link-span-login"><a href="/login">Log in</a></span>)
+        }
+    }
+
     return (
-        <div className="link">
-            <a href="/">Home</a>
-            <a href="/Threads">Threads</a>
-            <a href="/About">About</a>
-            <a href="/FAQ">FAQ</a>
-            <a href="/Rules">Rules</a>
-            <a href="/Login">Login</a>
+        <div className="linkContainer">
+            <div className="link">
+                {createLink(0, "/", "Home")}
+                {createLink(1, "/threads", "Threads")}
+                {createLink(2, "/about", "About")}
+                {createLink(3, "/faq", "FAQ")}
+                {createLink(4, "/rules", "Rules")}
+                <span> </span>  {/* Adds spacing before Log in */}
+                {createLogIn()}
+            </div>
         </div>
     )
 }
@@ -72,12 +102,12 @@ class Grid extends React.Component {
                     {this.state.open && (
                         <div className="dropdown">
                             <ul>
-                            <li> <a href="/">Home</a> </li>
-                            <li> <a href="/Threads">Threads</a> </li>
-                            <li> <a href="/About">About</a> </li>
-                            <li> <a href="/FAQ">FAQ</a> </li>
-                            <li> <a href="/Rules">Rules</a> </li>
-                            <li> <a href="/Login">Login</a> </li>
+                            <a href="/"> <li className="li-main"> Home </li> </a>
+                            <a href="/Threads"> <li className="li-main"> Threads </li> </a> 
+                            <a href="/About"> <li className="li-main"> About </li> </a>
+                            <a href="/FAQ"> <li className="li-main"> FAQ </li> </a>
+                            <a href="/Rules"> <li className="li-main"> Rules</li> </a>
+                            <a href="/Login"> <li className="li-login"> Log in </li> </a>
                             </ul>
                         </div>
                     )}
@@ -88,7 +118,7 @@ class Grid extends React.Component {
 }
 
 // Determines whether to use grid-style or written link based on width of screen 
-function DynamicLink () {
+function DynamicLink(props) {
     const updateWidth = () => {
         setWidth(window.innerWidth);
     };
@@ -100,10 +130,10 @@ function DynamicLink () {
     });
 
     const [width, setWidth] = React.useState(window.innerWidth);
-    
+
     // Chooses whether to show written links or grid links based on window width
     if(width > 700) {
-        return (<Links />)
+        return (<Links pageID={props.pageID} />)
     }
     else { 
         return (<Grid />)

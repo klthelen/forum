@@ -18,7 +18,7 @@ const Navbar = props => {
                 </a>
             </div>
             <div id="top-banner">
-                <DynamicLink />
+                <DynamicLink pageID={props.pageID} />
             </div>
         </div>
     )

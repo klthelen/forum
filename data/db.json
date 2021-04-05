@@ -3,27 +3,58 @@
     {
       "message": "Hello",
       "user": "Ben",
+      "threadID": "0",
       "id": 1
     },
     {
       "message": "another message",
       "user": "Anonymous",
+      "threadID": "0",
       "id": 2
     },
     {
       "message": "Goodbye",
       "user": "Kirk",
+      "threadID": "0",
       "id": 3
     },
     {
-      "message": "some more messages",
+      "message": "thread 1 test",
       "user": "Anonymous",
+      "threadID": "1",
       "id": 4
     },
     {
-      "message": "Hello again",
+      "message": "thread 2 test",
       "user": "Anonymous",
+      "threadID": "2",
       "id": 5
+    },
+    {
+      "message": "thread 3 test",
+      "user": "Anonymous",
+      "threadID": "3",
+      "id": 6
+    },
+    {
+      "message": "thread 1 again",
+      "user": "Anonymous",
+      "threadID": "1",
+      "id": 7
+    }
+  ],
+  "threads": [
+    {
+      "name": "This is a thread",
+      "id": 1
+    },
+    {
+      "name": "thread2",
+      "id": 2
+    },
+    {
+      "name": "another thread",
+      "id": 3
     }
   ]
 }
